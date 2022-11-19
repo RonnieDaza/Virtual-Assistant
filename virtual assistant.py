@@ -38,6 +38,11 @@ def run_alexa():
         time = datetime.datetime.now().strftime("%I:%M %p")
         print(time)
         talk("Current time is " + time)
+    elif "Who is" in command:
+        person = command.replace("Who is", "")
+        info = wikipedia.summary(person, 1)
+        print(info)
+        talk(info)
 
 
 run_alexa()
