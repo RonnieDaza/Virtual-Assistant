@@ -43,6 +43,10 @@ def run_alexa():
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
+    elif "Date" in command:
+        talk("Sorry, I have a headache.")
+    elif "Are you single?" in command:
+        talk("I am in a relationship.")
 
 
 run_alexa()
