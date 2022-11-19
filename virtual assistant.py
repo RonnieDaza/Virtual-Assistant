@@ -3,6 +3,7 @@ import pyttsx3
 import pywhatkit
 import datetime
 import wikipedia
+import pyjokes
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -47,6 +48,10 @@ def run_alexa():
         talk("Sorry, I have a headache.")
     elif "Are you single?" in command:
         talk("I am in a relationship.")
+    elif "Joke" in command:
+        talk(pyjokes.get_joke())
+    else:
+        talk("Please say the command again.")
 
-
-run_alexa()
+while True:
+    run_alexa()
